@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg menu navbar-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/logo.png" alt="logotipo" height="30" width="40">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <section class="banner text-white">
+            <h3>LogisticAPP by Globant</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea cumque repellendus veniam nam aut neque,
+                labore laudantium molestias provident sapiente mollitia perspiciatis eveniet vero blanditiis asperiores
+                officia est possimus hic, aspernatur commodi quas iure similique soluta quos? Necessitatibus laborum
+                quae minima at neque eius? Magnam quo ex quasi alias accusantium.</p>
+            <a href="#" class="btn btn-outline-warning">Ver mas</a>
+        </section>
+
+        <section class="container my-5">
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card h-100 p-4 shadow">
+                        <h4>Servicio 1</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel cum magni veniam consectetur
+                            optio perspiciatis quasi voluptas iste accusantium est quam ea ex eligendi, laborum sapiente
+                            amet atque quisquam quae!</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 p-4 shadow">
+                        <h4>Servicio 2</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel cum magni veniam consectetur
+                            optio perspiciatis quasi voluptas iste accusantium est quam ea ex eligendi, laborum sapiente
+                            amet atque quisquam quae!</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 p-4 shadow">
+                        <h4>Servicio 3</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel cum magni veniam consectetur
+                            optio perspiciatis quasi voluptas iste accusantium est quam ea ex eligendi, laborum sapiente
+                            amet atque quisquam quae!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <div class="row">
+
+                <div class="col-12 col-md-6">
+                    <img src="./assets/img/auxiliar.png" alt="auxiliar" class="img-fluid">
+                </div>
+                <div class="col-12 col-md-6">
+                    <h3>LOGISTIC APP</h3>
+                    <p>Registra una zona dentro de nuestro cuarto de soluciones</p>
+                    <hr>
+                    <form class="p-5 border rounded shadow">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-house-heart-fill"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Nombre de Zona" id="nombreZona">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-box2-heart-fill"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Volumen Maximo Zona" id="volumenMaximoZona">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-inbox-fill"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Peso Maximo Zona" id="pesoMaximoZona">
+                        </div>
+
+                        <button class="btn btn-warning w-100" id="botonZona">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3  style="text-align: center;">CONSULTA EL SERVICIO DE GET PARA LAS ZONAS</h3>
+            <hr>
+        </section>
+
+        <section class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+
+                    <form class="p-5 border rounded shadow">
+
+                        <h5>Registrar una mercancia:</h5>
+
+                        <div class="mb-3">
+                            <label for="basic-url" class="form-label">Nombre:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="nombreMercancia">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="basic-url" class="form-label">Descripción:</label>
+                            <textarea class="form-control" aria-label="With textarea" id="descripcionProducto"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="basic-url" class="form-label">Digita el ID de la zona donde desea registrar:</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="idZona">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="basic-url" class="form-label">Volumen que ocupa:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="volumenProducto">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="basic-url" class="form-label">Peso que ocupa:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="pesoProducto">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="basic-url" class="form-label">Fecha de entrada:</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control" id="fechaEntrada">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="basic-url" class="form-label">Fecha de salida:</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control" id="fechaSalida">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-warning w-100" id="botonProducto">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer></footer>
+
+    <script src="./src/controllers/controladorRegistroMercancias.js" type="module"></script>
+    <script src="./src/controllers/controladorRegistroZonas.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
