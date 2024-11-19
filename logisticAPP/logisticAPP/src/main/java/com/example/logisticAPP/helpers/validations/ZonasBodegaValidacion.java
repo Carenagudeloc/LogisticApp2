@@ -23,8 +23,8 @@ public class ZonasBodegaValidacion {
 
     public boolean validarPesoOcupado(Double pesoOcupado){
         return pesoOcupado>0?true:false;
-    }
-*/
+    }*/
+
 
 
 }

@@ -26,13 +26,31 @@ public class StoreZone {
     //pesoMaximo
     private  Double pesoMaximo; // solo positivos
 
-    //@Column(name = "volumen_ocupado", nullable = false)
+    @Column(name = "volumen_ocupado", nullable = false)
     //volumenOcupado
-    //private  Double volumenOcupado; //solo positivos
+    private  Double volumenOcupado= 0.0; //solo positivos
 
-    //@Column(name = "peso_ocupado", nullable = false)
+    @Column(name = "peso_ocupado", nullable = false)
     //pesoOcupado
-    //private  Double pesoOcupado = 0.0; //solo positivos
+    private  Double pesoOcupado = 0.0; //solo positivos
+
+    @Transient
+    private Double pesoRestante;
+    @Transient
+    private Double volumenRestante;
+    // Getters y setters
+    public Double getPesoRestante() {
+        return pesoRestante;
+    }
+    public void setPesoRestante(Double pesoRestante) {
+        this.pesoRestante = pesoRestante;
+    }
+    public Double getVolumenRestante() {
+        return volumenRestante;
+    }
+    public void setVolumenRestante(Double volumenRestante) {
+        this.volumenRestante = volumenRestante;
+    }
 
     @OneToMany(mappedBy = "storeZone")
     @JsonManagedReference
@@ -47,8 +65,8 @@ public class StoreZone {
         this.nombreZona = nombreZona;
         this.volumenMaximo = volumenMaximo;
         this.pesoMaximo = pesoMaximo;
-        //this.volumenOcupado = volumenOcupado;
-        //this.pesoOcupado = pesoOcupado;
+        this.volumenOcupado = volumenOcupado;
+        this.pesoOcupado = pesoOcupado;
     }
 
     public Integer getIdZona() {
@@ -83,7 +101,7 @@ public class StoreZone {
         this.pesoMaximo = pesoMaximo;
     }
 
-    /*public Double getVolumenOcupado() {
+    public Double getVolumenOcupado() {
         return volumenOcupado;
     }
 
@@ -97,5 +115,5 @@ public class StoreZone {
 
     public void setPesoOcupado(Double pesoOcupado) {
         this.pesoOcupado = pesoOcupado;
-    }*/
+    }
 }

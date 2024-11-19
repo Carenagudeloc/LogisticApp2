@@ -79,4 +79,38 @@ public class ZonaBodegaControlador {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(respuestError);
         }
     }
+
+    @GetMapping("/zonas")
+    public ResponseEntity<?> obtenerZonas() {
+        try {
+            // Llamar al servicio para obtener todas las zonas
+            return ResponseEntity.status(HttpStatus.OK).body(zonaBodegaServicio.buscarMercancias());
+        } catch (Exception e) {
+            // Manejo de errores en caso de falla
+            HashMap<String, Object> respuestaError = new HashMap<>();
+            respuestaError.put("mensaje", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(respuestaError);
+        }
+    }
+
+    @PostMapping("/ingresarProducto/{idZona}")
+    public ResponseEntity<?> ingresarProductoEnZona(@PathVariable Integer idZona,
+                                                    @RequestParam Double pesoProducto,
+                                                    @RequestParam Double volumenProducto) {
+        try {
+            StoreZone zonaActualizada = zonaBodegaServicio.ingresarProductoEnZona(idZona, pesoProducto, volumenProducto);
+            HashMap<String, Object> respuesta = new HashMap<>();
+            respuesta.put("idZona", zonaActualizada.getIdZona());
+            respuesta.put("pesoOcupado", zonaActualizada.getPesoOcupado());
+            respuesta.put("volumenOcupado", zonaActualizada.getVolumenOcupado());
+            respuesta.put("pesoRestante", zonaActualizada.getPesoRestante());
+            respuesta.put("volumenRestante", zonaActualizada.getVolumenRestante());
+            return ResponseEntity.status(HttpStatus.OK).body(respuesta);
+        } catch (Exception error) {
+            HashMap<String, Object> respuestaError = new HashMap<>();
+            respuestaError.put("mensaje", error.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(respuestaError);
+        }
+    }
 }
+

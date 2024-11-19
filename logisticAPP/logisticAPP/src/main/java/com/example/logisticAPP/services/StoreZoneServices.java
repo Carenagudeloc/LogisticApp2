@@ -6,6 +6,7 @@ import com.example.logisticAPP.helpers.validations.ZonasBodegaValidacion;
 import com.example.logisticAPP.models.Client;
 import com.example.logisticAPP.models.StoreZone;
 import com.example.logisticAPP.repositories.IStoreZoneRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,4 +58,34 @@ public class StoreZoneServices {
         }
     }
 
+    @Transactional
+    public StoreZone ingresarProductoEnZona(Integer idZona, Double pesoProducto, Double volumenProducto) throws Exception {
+            // Buscar la zona de bodega por id
+            StoreZone zona = consultaBD.findById(idZona)
+                    .orElseThrow(() -> new Exception("Zona no encontrada"));
+            if (pesoProducto <= 0 || volumenProducto <= 0) {
+                throw new Exception("Peso o volumen inválido");
+            }
+            // Validar límites
+            if (zona.getPesoOcupado() + pesoProducto > zona.getPesoMaximo()) {
+                throw new Exception("El peso excede el máximo permitido en la zona");
+            }
+            if (zona.getVolumenOcupado() + volumenProducto > zona.getVolumenMaximo()) {
+                throw new Exception("El volumen excede el máximo permitido en la zona");
+            }
+            // Actualizar peso y volumen ocupados
+            zona.setPesoOcupado(zona.getPesoOcupado() + pesoProducto);
+            zona.setVolumenOcupado(zona.getVolumenOcupado() + volumenProducto);
+            // Guardar los cambios
+            consultaBD.save(zona);
+            // Calcular peso y volumen restantes
+            Double pesoRestante = zona.getPesoMaximo() - zona.getPesoOcupado();
+            Double volumenRestante = zona.getVolumenMaximo() - zona.getVolumenOcupado();
+            // Agregar al modelo y devolver
+            zona.setPesoRestante(pesoRestante);   // Debes agregar este atributo en la clase StoreZone
+            zona.setVolumenRestante(volumenRestante);
+            return zona;
+    }
+
 }
+
