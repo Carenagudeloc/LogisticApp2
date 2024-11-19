@@ -10,6 +10,10 @@ public class StoreZoneDTO {
 
     private  Double pesoMaximo;
 
+    private Double volumenOcupa;
+
+    private  Double pesoOcupa;
+
     public StoreZoneDTO() {
     }
 
@@ -18,6 +22,16 @@ public class StoreZoneDTO {
         this.nombreZona = nombreZona;
         this.volumenMaximo = volumenMaximo;
         this.pesoMaximo = pesoMaximo;
+    }
+
+    public StoreZoneDTO(Integer idZona, String nombreZona, Double volumenMaximo, Double pesoMaximo, Double pesoOcupa, Double volumenOcupa) {
+        this.idZona = idZona;
+        this.nombreZona = nombreZona;
+        this.volumenMaximo = volumenMaximo;
+        this.pesoMaximo = pesoMaximo;
+        this.pesoOcupa= pesoOcupa;
+        this.volumenOcupa= volumenOcupa;
+
     }
 
     public Integer getIdZona() {
@@ -50,5 +64,21 @@ public class StoreZoneDTO {
 
     public void setPesoMaximo(Double pesoMaximo) {
         this.pesoMaximo = pesoMaximo;
+    }
+
+    public Double getPesoOcupa() {
+        return pesoOcupa;
+    }
+
+    public void setPesoOcupa(Double pesoOcupa) {
+        this.pesoOcupa = pesoOcupa;
+    }
+
+    public Double getVolumenOcupa() {
+        return volumenOcupa;
+    }
+
+    public void setVolumenOcupa(Double volumenOcupa) {
+        this.volumenOcupa = volumenOcupa;
     }
 }

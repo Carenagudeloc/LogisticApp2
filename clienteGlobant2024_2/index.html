@@ -128,6 +128,10 @@
         <section class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8">
+                    <h5>Aqui podras encontrar las zonas que tenemos: </h5>
+                    <select id="zonaSelect">
+                        <option value="">Seleccione una zona</option>
+                    </select>
 
                     <form class="p-5 border rounded shadow">
 
@@ -149,7 +153,6 @@
                             <label for="basic-url" class="form-label">Digita el ID de la zona donde desea registrar:</label>
                             <div class="input-group">
                                 <input type="number" class="form-control" id="idZona">
-                            </div>
                         </div>
 
                         <div class="mb-3">
@@ -191,6 +194,7 @@
 
     <script src="./src/controllers/controladorRegistroMercancias.js" type="module"></script>
     <script src="./src/controllers/controladorRegistroZonas.js" type="module"></script>
+    <script src="./src/controllers/controladorZonas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

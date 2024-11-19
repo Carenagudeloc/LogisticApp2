@@ -30,6 +30,7 @@ botonMercancia.addEventListener("click", function(evento){
     //lamo al servicio para llevarle datos al back
     registrarMercancia(datosProducto)
 
+ 
     Swal.fire({
         title: "Good job!",
         text: "You clicked the button!",

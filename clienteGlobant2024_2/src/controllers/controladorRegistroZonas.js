@@ -21,6 +21,8 @@ let datosZona={
 
     registrarZona(datosZona)
 
+   
+
     Swal.fire({
         title: "Good job!",
         text: "You clicked the button!",
